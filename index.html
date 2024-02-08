@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Afyona!</title>
+    <style>
+        body {
+            background-color: #ff69b4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            color: #fff; /* White text color */
+            position: relative;
+            font-family: 'Your Chosen Font', sans-serif; /* Replace 'Your Chosen Font' with the actual font name you want to use */
+        }
+
+        h1 {
+            font-size: 2em;
+            text-align: center;
+            z-index: 1;
+            position: relative;
+        }
+
+        .balloon {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            animation: float 5s infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="https://od.lk/s/ODVfNTI0Njk2NDBf/%D8%AD%D8%A7%D9%84%D8%A7%D8%AA%20%D9%88%D8%A7%D8%AA%D8%B3%20%D9%85%D9%86%D9%8A%D8%B1%20%D8%A7%D9%86%D8%AA%D9%8A%20%D9%81%D8%B1%D8%AD%D9%8A" type="audio/mp3">
+        
+    </audio>
+
+    <h1>Happy Birthday Afyona, You Mean The World to Me.</h1>
+
+    <script>
+        function createBalloons() {
+            const numBalloons = 100;
+
+            for (let i = 0; i < numBalloons; i++) {
+                const balloon = document.createElement('div');
+                balloon.className = 'balloon';
+                balloon.style.top = `${Math.random() * 100}%`;
+                balloon.style.left = `${Math.random() * 100}%`;
+                balloon.style.backgroundColor = getRandomColor();
+
+                document.body.appendChild(balloon);
+            }
+        }
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        createBalloons();
+    </script>
+</body>
+</html>
